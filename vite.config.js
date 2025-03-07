@@ -11,5 +11,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // This line sets the @ alias
     },
   },
-  base : "/portfolio"
+  base : "/my_portfolio"
 })
