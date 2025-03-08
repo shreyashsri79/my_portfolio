@@ -6,16 +6,19 @@ const Projects = () => {
       title: "Android Projects",
       description: "Showcasing Android apps built with Kotlin and Java.",
       icon: "📱",
+      sectionId: "android-projects",
     },
     {
       title: "Web Projects",
       description: "Collection of web applications using React and modern frameworks.",
       icon: "🌐",
+      sectionId: "web-projects",
     },
     {
       title: "Backend Projects",
       description: "API development and server-side logic using Node.js, Express, and MongoDB.",
       icon: "⚙️",
+      sectionId: "backend-projects",
     },
   ];
 
@@ -30,13 +33,13 @@ const Projects = () => {
 
   const staggerVariants = {
     visible: {
-      transition: { staggerChildren: 0.3, delayChildren: 0.2 }
+      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
     },
   };
 
   const fadeInVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
@@ -52,12 +55,8 @@ const Projects = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl font-bold mb-6 text-white">
-          Projects
-        </h2>
-        <p className="text-lg text-gray-400">
-          A glimpse into my works across different platforms.
-        </p>
+        <h2 className="text-5xl font-bold mb-6 text-white">Projects</h2>
+        <p className="text-lg text-gray-400">A glimpse into my works across different platforms.</p>
       </motion.div>
 
       {/* Card Reveal */}
@@ -73,12 +72,10 @@ const Projects = () => {
             key={index}
             variants={fadeInVariants}
             className="bg-gray-800 rounded-2xl shadow-lg p-8 w-full md:w-1/3 transition-all duration-500 cursor-pointer hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] relative overflow-hidden"
+            onClick={() => document.getElementById(card.sectionId).scrollIntoView({ behavior: "smooth" })}
           >
             <div className="flex items-center gap-4">
-              <motion.span
-                className="text-3xl"
-                animate={iconAnimation}
-              >
+              <motion.span className="text-3xl" animate={iconAnimation}>
                 {card.icon}
               </motion.span>
               <h3 className="text-2xl font-semibold">{card.title}</h3>

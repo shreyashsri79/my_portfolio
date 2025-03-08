@@ -14,7 +14,6 @@ const ContactMe = () => {
       id="contact"
       className="p-10 min-h-screen flex flex-col justify-center items-center bg-[#0A0F1A] text-white relative"
     >
-      
       {/* Heading Reveal */}
       <motion.div
         className="text-center mb-12 relative z-10"
@@ -47,7 +46,7 @@ const ContactMe = () => {
         variants={fadeInVariants}
       >
         <motion.a
-          href="https://www.linkedin.com/in/shreyash-neeraj-9a3024252?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bm6X6doGLR36GQImBt3D1IA%3D%3D"
+          href="https://www.linkedin.com/in/shreyash-neeraj-9a3024252"
           target="_blank"
           whileHover={{ scale: 1.2, color: "#0A66C2", textShadow: "0px 0px 15px rgba(10, 102, 194, 0.8)" }}
           className="cursor-pointer transition-all duration-300"
@@ -64,14 +63,27 @@ const ContactMe = () => {
           <FaGithub />
         </motion.a>
 
-        <motion.a
-          href="https://www.instagram.com/they.call.me.zoro/"
-          target="_blank"
-          whileHover={{ scale: 1.2, color: "#E1306C", textShadow: "0px 0px 15px rgba(225, 48, 108, 0.8)" }}
-          className="cursor-pointer transition-all duration-300"
-        >
-          <FaInstagram />
-        </motion.a>
+        <motion.div className="flex flex-col items-center">
+          <motion.a
+            href="https://www.instagram.com/they.call.me.zoro/"
+            target="_blank"
+            whileHover={{ scale: 1.2, color: "#E1306C", textShadow: "0px 0px 15px rgba(225, 48, 108, 0.8)" }}
+            className="cursor-pointer transition-all duration-300"
+            onMouseEnter={() => document.getElementById("baddie-text").classList.remove("hidden")}
+            onMouseLeave={() => document.getElementById("baddie-text").classList.add("hidden")}
+          >
+            <FaInstagram />
+          </motion.a>
+          <motion.span
+            id="baddie-text"
+            className="hidden text-sm text-gray-400 mt-2"
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            Baddie Only 💅
+          </motion.span>
+        </motion.div>
       </motion.div>
     </section>
   );

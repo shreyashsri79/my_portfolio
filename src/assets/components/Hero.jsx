@@ -77,14 +77,49 @@ const Hero = () => {
           <p className="text-base md:text-lg text-gray-400 leading-relaxed">
             Software Engineer | Web & Android Developer
           </p>
+
+          {/* Navigation Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.1, boxShadow: '0px 0px 30px rgba(255, 255, 255, 0.2)' }}
+              className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer"
+              onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
+            >
+              Who’s Building This?
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1, boxShadow: '0px 0px 30px rgba(255, 255, 255, 0.2)' }}
+              className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer"
+              onClick={() => document.getElementById("skills").scrollIntoView({ behavior: "smooth" })}
+            >
+              What’s in My Toolbox?
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1, boxShadow: '0px 0px 30px rgba(255, 255, 255, 0.2)' }}
+              className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer"
+              onClick={() => document.getElementById("experience").scrollIntoView({ behavior: "smooth" })}
+            >
+              Where I’ve Been
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1, boxShadow: '0px 0px 30px rgba(255, 255, 255, 0.2)' }}
+              className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer"
+              onClick={() => document.getElementById("projects").scrollIntoView({ behavior: "smooth" })}
+            >
+              What I’ve Built
+            </motion.button>
+          </div>
+
+          {/* Reach Out Button */}
           <motion.button
             whileHover={{ scale: 1.1, boxShadow: '0px 0px 30px rgba(255, 255, 255, 0.2)' }}
-            className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer"
-            onClick={() => {
-              document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-            }}
+            className="bg-[#111827] text-white px-6 md:px-8 py-3 rounded-lg transition-all duration-500 hover:bg-[#ffffff30] shadow-lg cursor-pointer mt-4"
+            onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}
           >
-            Reach out
+            Let’s Connect
           </motion.button>
 
         </motion.div>
